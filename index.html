@@ -54,15 +54,19 @@
     transition: opacity 0.6s ease, visibility 0.6s ease;
   }
   #loader.hidden { opacity: 0; visibility: hidden; }
-  .loader-letters {
-    display: flex;
-    gap: 0.15em;
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(2rem, 5vw, 3.5rem);
-    font-weight: 300;
-    letter-spacing: 0.3em;
-    color: var(--white);
-  }
+.loader-letters {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.1em 0.4em;
+  max-width: 90vw;
+  text-align: center;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.15rem, 4vw, 1.9rem);
+  font-weight: 300;
+  letter-spacing: 0.06em;
+  color: var(--white);
+}
   .loader-letters span {
     opacity: 0;
     transform: translateY(20px);
@@ -1330,7 +1334,7 @@ Un messaggio efficace può trasformare un contatto in un'opportunità. Si costru
 <script>
   // LOADER
   const loaderLetters = document.getElementById('loaderLetters');
-  const fullText = ['L','T','A','D'];
+  const fullText = ['La','Tua','Assistente','a','Distanza'];
   fullText.forEach((l, i) => {
     const span = document.createElement('span');
     span.textContent = l;
