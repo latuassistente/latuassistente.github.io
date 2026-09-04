@@ -1037,10 +1037,98 @@
   .ai-chat-input input:focus { border-color: var(--blue-mid); background: white; }
   .ai-chat-send { width: 38px; height: 38px; border: 0; border-radius: 50%; background: var(--blue-mid); color: white; cursor: pointer; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
   .ai-chat-send svg { width: 16px; height: 16px; }
+  /* CHATBOT: posizionamento responsive tablet + smartphone */
+  @media (max-width: 900px) {
+    .floating-contact-wrap {
+      left: 14px;
+      right: auto;
+      bottom: max(14px, env(safe-area-inset-bottom));
+      gap: 6px;
+      max-width: calc(100vw - 28px);
+    }
+    .ai-chat {
+      left: 0;
+      right: auto;
+      transform-origin: bottom left;
+    }
+  }
+
   @media (max-width: 600px) {
-    .floating-contact-wrap { right: 14px; bottom: 14px; gap: 8px; }
-    .chatbot-launcher, .whatsapp-launcher { width: 54px; height: 54px; }
-    .ai-chat { bottom: 64px; width: min(350px, calc(100vw - 28px)); }
+    /* Ottimizzazione esclusivamente mobile del chatbot */
+    .floating-contact-wrap {
+      left: 8px;
+      right: auto;
+      bottom: max(8px, env(safe-area-inset-bottom));
+      gap: 5px;
+      max-width: calc(100vw - 16px);
+    }
+    .chatbot-launcher,
+    .whatsapp-launcher {
+      width: 42px;
+      height: 42px;
+      min-width: 42px;
+      min-height: 42px;
+      flex: 0 0 42px;
+    }
+    .chatbot-launcher img { object-position: center 20%; }
+    .whatsapp-launcher svg { width: 20px; height: 20px; }
+
+    .ai-chat {
+      left: 0;
+      right: auto;
+      bottom: 52px;
+      width: min(360px, calc(100vw - 12px));
+      max-height: calc(100dvh - 86px);
+      border-radius: 12px;
+      transform-origin: bottom left;
+    }
+    .ai-chat-head {
+      padding: 10px 12px;
+      gap: 8px;
+    }
+    .ai-chat-avatar {
+      width: 38px;
+      height: 38px;
+    }
+    .ai-chat-name { font-size: .84rem; }
+    .ai-chat-status { font-size: .62rem; }
+    .ai-chat-close { font-size: 20px; padding: 4px; }
+
+    .ai-chat-body {
+      padding: 10px;
+      max-height: calc(100dvh - 205px);
+      overscroll-behavior: contain;
+      -webkit-overflow-scrolling: touch;
+    }
+    .ai-msg {
+      max-width: 94%;
+      padding: 8px 10px;
+      font-size: .76rem;
+      line-height: 1.45;
+    }
+    .ai-service-links { gap: 5px; }
+    .ai-service-link {
+      padding: 8px 9px;
+      font-size: .7rem;
+    }
+    .ai-quick { gap: 5px; }
+    .ai-quick button {
+      padding: 7px 8px;
+      font-size: .68rem;
+    }
+    .ai-chat-input {
+      padding: 8px;
+      gap: 6px;
+    }
+    .ai-chat-input input {
+      min-width: 0;
+      padding: 9px 11px;
+      font-size: .76rem;
+    }
+    .ai-chat-send {
+      width: 36px;
+      height: 36px;
+    }
   }
 
   /* RESPONSIVE */
@@ -1052,6 +1140,88 @@
     .services-header { grid-template-columns: 1fr; gap: 1.5rem; }
     .contact-grid { grid-template-columns: 1fr; gap: 3rem; }
     footer { grid-template-columns: 1fr; }
+  }
+
+  /* OTTIMIZZAZIONE DEFINITIVA TABLET + SMARTPHONE - solo chatbot/WhatsApp */
+  @media (max-width: 900px) {
+    .floating-contact-wrap {
+      right: max(10px, env(safe-area-inset-right));
+      bottom: max(10px, env(safe-area-inset-bottom));
+      left: auto;
+      width: auto;
+      max-width: calc(100vw - 20px);
+      gap: 6px;
+      box-sizing: border-box;
+    }
+    .chatbot-launcher,
+    .whatsapp-launcher {
+      width: 40px;
+      height: 40px;
+      min-width: 40px;
+      min-height: 40px;
+      flex: 0 0 40px;
+    }
+    .chatbot-launcher img { object-position: center 20%; }
+    .chatbot-launcher::after { width: 9px; height: 9px; right: 0; bottom: 0; border-width: 1.5px; }
+    .whatsapp-launcher svg { width: 19px; height: 19px; }
+
+    .ai-chat {
+      right: 0;
+      bottom: 48px;
+      width: min(330px, calc(100vw - 20px));
+      max-width: calc(100vw - 20px);
+      max-height: calc(100dvh - 72px);
+      box-sizing: border-box;
+    }
+    .ai-chat-body {
+      max-height: min(300px, calc(100dvh - 185px));
+    }
+  }
+
+  @media (max-width: 600px) {
+    .floating-contact-wrap {
+      right: max(8px, env(safe-area-inset-right));
+      bottom: max(8px, env(safe-area-inset-bottom));
+      max-width: calc(100vw - 16px);
+      gap: 4px;
+    }
+    .chatbot-launcher,
+    .whatsapp-launcher {
+      width: 36px;
+      height: 36px;
+      min-width: 36px;
+      min-height: 36px;
+      flex-basis: 36px;
+      border-width: 1.5px;
+    }
+    .whatsapp-launcher svg { width: 17px; height: 17px; }
+    .chatbot-launcher::after { width: 8px; height: 8px; }
+    .ai-chat {
+      bottom: 43px;
+      width: min(310px, calc(100vw - 16px));
+      max-width: calc(100vw - 16px);
+      max-height: calc(100dvh - 62px);
+      border-radius: 10px;
+    }
+    .ai-chat-head { padding: 8px 10px; gap: 7px; }
+    .ai-chat-avatar { width: 34px; height: 34px; }
+    .ai-chat-name { font-size: .8rem; }
+    .ai-chat-status { font-size: .58rem; }
+    .ai-chat-body { padding: 8px; max-height: calc(100dvh - 170px); }
+    .ai-msg { max-width: 95%; padding: 7px 9px; font-size: .72rem; line-height: 1.4; }
+    .ai-service-link { padding: 7px 8px; font-size: .67rem; }
+    .ai-quick { gap: 4px; }
+    .ai-quick button { padding: 6px 7px; font-size: .64rem; }
+    .ai-chat-input { padding: 7px; gap: 5px; }
+    .ai-chat-input input { padding: 8px 10px; font-size: .7rem; }
+    .ai-chat-send { width: 32px; height: 32px; }
+  }
+
+  @media (max-width: 360px) {
+    .floating-contact-wrap { right: 6px; bottom: max(6px, env(safe-area-inset-bottom)); gap: 3px; max-width: calc(100vw - 12px); }
+    .chatbot-launcher, .whatsapp-launcher { width: 32px; height: 32px; min-width: 32px; min-height: 32px; flex-basis: 32px; }
+    .whatsapp-launcher svg { width: 15px; height: 15px; }
+    .ai-chat { bottom: 38px; width: calc(100vw - 12px); max-width: calc(100vw - 12px); }
   }
 </style>
 </head>
