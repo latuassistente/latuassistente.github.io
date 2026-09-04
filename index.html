@@ -1223,6 +1223,138 @@
     .whatsapp-launcher svg { width: 15px; height: 15px; }
     .ai-chat { bottom: 38px; width: calc(100vw - 12px); max-width: calc(100vw - 12px); }
   }
+
+  /* MOBILE/TABLET FINAL FIX - solo responsive, senza modificare il desktop */
+  html, body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  @media (max-width: 900px) {
+    #hero {
+      width: 100%;
+      min-width: 0;
+      padding-left: clamp(1.25rem, 5vw, 2.5rem);
+      padding-right: clamp(1.25rem, 5vw, 2.5rem);
+    }
+    .hero-content { width: 100%; max-width: 100%; min-width: 0; }
+    .hero-title, .hero-subtitle { max-width: 100%; }
+    .hero-ctas { width: 100%; min-width: 0; }
+    .hero-ctas a { max-width: 100%; }
+    .loader-tagline {
+      max-width: calc(100vw - 24px);
+      text-align: center;
+      line-height: 1.8;
+      letter-spacing: .28em;
+    }
+    .loader-bar { max-width: calc(100vw - 48px); }
+
+    /* Il blocco flottante resta completamente dentro il viewport */
+    .floating-contact-wrap {
+      position: fixed !important;
+      left: 12px !important;
+      right: auto !important;
+      bottom: max(12px, env(safe-area-inset-bottom)) !important;
+      width: auto !important;
+      max-width: calc(100vw - 24px) !important;
+      min-width: 0 !important;
+      display: flex !important;
+      flex-direction: row !important;
+      align-items: flex-end !important;
+      gap: 6px !important;
+      margin: 0 !important;
+    }
+    .chatbot-launcher, .whatsapp-launcher {
+      flex: 0 0 auto !important;
+      box-sizing: border-box !important;
+    }
+    .ai-chat {
+      left: 0 !important;
+      right: auto !important;
+      width: min(340px, calc(100vw - 24px)) !important;
+      max-width: calc(100vw - 24px) !important;
+      box-sizing: border-box !important;
+      transform-origin: bottom left !important;
+    }
+  }
+
+  @media (max-width: 600px) {
+    section {
+      padding-left: 1.25rem;
+      padding-right: 1.25rem;
+    }
+    .hero-title {
+      font-size: clamp(2.35rem, 10.5vw, 3.5rem);
+      line-height: 1.08;
+    }
+    .hero-subtitle {
+      font-size: .92rem;
+      line-height: 1.65;
+    }
+    .hero-ctas {
+      flex-direction: column;
+      align-items: stretch;
+    }
+    .hero-ctas a {
+      width: 100%;
+      justify-content: center;
+    }
+    .loader-letters { max-width: calc(100vw - 24px); }
+    .loader-tagline {
+      font-size: .64rem;
+      letter-spacing: .22em;
+      max-width: calc(100vw - 24px);
+    }
+
+    .floating-contact-wrap {
+      left: 10px !important;
+      bottom: max(10px, env(safe-area-inset-bottom)) !important;
+      max-width: calc(100vw - 20px) !important;
+      gap: 5px !important;
+    }
+    .chatbot-launcher, .whatsapp-launcher {
+      width: 42px !important;
+      height: 42px !important;
+      min-width: 42px !important;
+      min-height: 42px !important;
+    }
+    .chatbot-launcher img { object-position: center 20%; }
+    .whatsapp-launcher svg { width: 19px !important; height: 19px !important; }
+    .ai-chat {
+      bottom: 50px !important;
+      width: calc(100vw - 20px) !important;
+      max-width: calc(100vw - 20px) !important;
+      max-height: calc(100dvh - 70px) !important;
+    }
+    .ai-chat-body {
+      max-height: calc(100dvh - 175px) !important;
+      overflow-y: auto !important;
+      overscroll-behavior: contain;
+      -webkit-overflow-scrolling: touch;
+    }
+  }
+
+  @media (max-width: 380px) {
+    .floating-contact-wrap {
+      left: 8px !important;
+      bottom: max(8px, env(safe-area-inset-bottom)) !important;
+      max-width: calc(100vw - 16px) !important;
+      gap: 4px !important;
+    }
+    .chatbot-launcher, .whatsapp-launcher {
+      width: 38px !important;
+      height: 38px !important;
+      min-width: 38px !important;
+      min-height: 38px !important;
+    }
+    .whatsapp-launcher svg { width: 17px !important; height: 17px !important; }
+    .ai-chat {
+      bottom: 45px !important;
+      width: calc(100vw - 16px) !important;
+      max-width: calc(100vw - 16px) !important;
+    }
+  }
 </style>
 </head>
 <body>
