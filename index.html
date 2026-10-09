@@ -591,6 +591,29 @@
   }
   .service-card:hover::after { width: 100%; }
   .service-card:hover { background: var(--navy); }
+  .service-cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1rem;
+    padding: 0.7rem 0.9rem;
+    border: 1px solid var(--gold);
+    border-radius: 2px;
+    color: var(--blue);
+    text-decoration: none;
+    font-size: 0.78rem;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    transition: background 0.2s, color 0.2s, transform 0.2s;
+  }
+  .service-card:hover .service-cta { color: var(--gold); }
+  .service-cta:hover, .service-cta:focus-visible {
+    background: var(--gold);
+    color: var(--navy) !important;
+    transform: translateY(-1px);
+    outline-offset: 3px;
+  }
+
   .service-card:hover .service-num,
   .service-card:hover .service-name,
   .service-card:hover .service-desc { color: rgba(255,255,255,0.9); }
@@ -1582,7 +1605,7 @@
       </div>
       <div class="service-name">La tua Assistente a Distanza</div>
       <div class="service-desc">Il supporto operativo che ti serve, quando ti serve.<br><span class="service-short-text">Segreteria virtuale, gestione delle attività quotidiane, organizzazione e supporto amministrativo da remoto.</span><br><span class="service-tags">Professionisti · Imprenditori · Aziende</span></div>
-    <br>Clicca sui pulsanti qui sotto per accedere a soluzioni personalizzate altamente competitive.
+    <br><a class="service-cta" href="https://wa.me/393664424024?text=Ciao%20Valentina%2C%20vorrei%20informazioni%20sul%20servizio%3A%20La%20tua%20Assistente%20a%20Distanza." target="_blank" rel="noopener noreferrer">Richiedi informazioni su WhatsApp</a>
 </div>
     <div class="service-card" id="servizio-02">
       <div class="service-num">02</div>
@@ -1591,7 +1614,7 @@
       </div>
       <div class="service-name">Liste Marketing & Campagne Email, WhatsApp e SMS</div>
       <div class="service-desc">Trova nuovi potenziali clienti e raggiungili nel modo giusto.<br><span class="service-short-text">Liste profilate B2B e B2C e campagne <strong>Email, WhatsApp e SMS</strong> per le tue attività commerciali.</span><br><span class="service-tags">Lead generation · Promozione · Vendita</span></div>
-    <br>Clicca sui pulsanti qui sotto per accedere a soluzioni personalizzate altamente competitive.
+    <br><a class="service-cta" href="https://wa.me/393664424024?text=Ciao%20Valentina%2C%20vorrei%20informazioni%20sul%20servizio%3A%20Liste%20Marketing%20e%20campagne%20Email%2C%20WhatsApp%20e%20SMS." target="_blank" rel="noopener noreferrer">Richiedi informazioni su WhatsApp</a>
 </div>
     <div class="service-card" id="servizio-03">
       <div class="service-num">03</div>
@@ -1600,7 +1623,7 @@
       </div>
       <div class="service-name">La Tua Impresa Online & Social Network</div>
       <div class="service-desc">Fatti trovare. Fatti conoscere. Fatti scegliere.<br><span class="service-short-text">Google, social network e presenza online coordinata per rendere la tua attività più visibile e professionale.</span><br><span class="service-tags">Google · Social · Visibilità online</span></div>
-    <br>Clicca sui pulsanti qui sotto per accedere a soluzioni personalizzate altamente competitive.
+    <br><a class="service-cta" href="https://wa.me/393664424024?text=Ciao%20Valentina%2C%20vorrei%20informazioni%20sul%20servizio%3A%20La%20Tua%20Impresa%20Online%20e%20Social%20Network." target="_blank" rel="noopener noreferrer">Richiedi informazioni su WhatsApp</a>
 </div>
     <div class="service-card" id="servizio-04">
       <div class="service-num">04</div>
@@ -1609,7 +1632,7 @@
       </div>
       <div class="service-name">Selezione e Formazione del Personale</div>
       <div class="service-desc">Le persone giuste per far crescere la tua attività.<br><span class="service-short-text">Supporto nella ricerca, selezione e formazione delle risorse più adatte alle esigenze della tua azienda.</span><br><span class="service-tags">Recruiting · Formazione · Performance</span></div>
-    <br>Clicca sui pulsanti qui sotto per accedere a soluzioni personalizzate altamente competitive.
+    <br><a class="service-cta" href="https://wa.me/393664424024?text=Ciao%20Valentina%2C%20vorrei%20informazioni%20sul%20servizio%3A%20Selezione%20e%20Formazione%20del%20Personale." target="_blank" rel="noopener noreferrer">Richiedi informazioni su WhatsApp</a>
 </div>
     <div class="service-card" id="servizio-05">
       <div class="service-num">05</div>
@@ -1618,7 +1641,7 @@
       </div>
       <div class="service-name">CRM & Contact Center Cloud</div>
       <div class="service-desc">Organizza i tuoi contatti. Automatizza il tuo lavoro.<br><span class="service-short-text">CRM e strumenti cloud per gestire contatti, campagne, operatori e attività commerciali in modo più efficace.</span><br><span class="service-tags">CRM · Contact Center · Automazione</span></div>
-    <br>Clicca sui pulsanti qui sotto per accedere a soluzioni personalizzate altamente competitive.
+    <br><a class="service-cta" href="https://wa.me/393664424024?text=Ciao%20Valentina%2C%20vorrei%20informazioni%20sul%20servizio%3A%20CRM%20e%20Contact%20Center%20Cloud." target="_blank" rel="noopener noreferrer">Richiedi informazioni su WhatsApp</a>
 </div>
     <div class="service-card" id="servizio-06">
       <div class="service-num">06</div>
@@ -1627,7 +1650,7 @@
       </div>
       <div class="service-name">Gestione Amministrativa e Adempimenti per Strutture Ricettive</div>
       <div class="service-desc">Meno burocrazia, più tempo per i tuoi ospiti.<br><span class="service-short-text">Supporto da remoto per gli adempimenti e le comunicazioni richieste alle strutture ricettive.</span><br><span class="service-tags">B&B · Case vacanza · Affittacamere</span></div>
-    <br>Clicca sui pulsanti qui sotto per accedere a soluzioni personalizzate altamente competitive.
+    <br><a class="service-cta" href="https://wa.me/393664424024?text=Ciao%20Valentina%2C%20vorrei%20informazioni%20sul%20servizio%3A%20Gestione%20Amministrativa%20per%20Strutture%20Ricettive." target="_blank" rel="noopener noreferrer">Richiedi informazioni su WhatsApp</a>
 </div>
     <div class="service-card" id="servizio-07">
       <div class="service-num">07</div>
@@ -1636,7 +1659,7 @@
       </div>
       <div class="service-name">Creazione Siti Web, Pagine Vetrina e Landing Page</div>
       <div class="service-desc">Una presenza online professionale che lavora per te.<br><span class="service-short-text">Siti vetrina e landing page personalizzati per presentare la tua attività e generare contatti.</span><br><span class="service-tags">Siti web · Landing page · Grafica</span></div>
-     <br>Clicca sui pulsanti qui sotto per accedere a soluzioni personalizzate altamente competitive.
+     <br><a class="service-cta" href="https://wa.me/393664424024?text=Ciao%20Valentina%2C%20vorrei%20informazioni%20sul%20servizio%3A%20Creazione%20Siti%20Web%2C%20Pagine%20Vetrina%20e%20Landing%20Page." target="_blank" rel="noopener noreferrer">Richiedi informazioni su WhatsApp</a>
 
     </div>
     <div class="service-card" id="servizio-08">
@@ -1646,7 +1669,7 @@
       </div>
       <div class="service-name">Creazione Biglietti da Visita Digitali con Tecnologia NFC</div>
       <div class="service-desc">Il tuo biglietto da visita, sempre con te.<br><span class="service-short-text">Una card digitale NFC per condividere contatti, social, sito e informazioni professionali con un semplice gesto.</span><br><span class="service-tags">NFC · Networking · Digitale</span></div>
-     <br>Clicca sui pulsanti qui sotto per accedere a soluzioni personalizzate altamente competitive.
+     <br><a class="service-cta" href="https://wa.me/393664424024?text=Ciao%20Valentina%2C%20vorrei%20informazioni%20sul%20servizio%3A%20Biglietti%20da%20Visita%20Digitali%20con%20Tecnologia%20NFC." target="_blank" rel="noopener noreferrer">Richiedi informazioni su WhatsApp</a>
 
     </div>
     <div class="service-card" id="servizio-09">
@@ -1656,7 +1679,7 @@
       </div>
       <div class="service-name">Life/Business Coaching e Consulenza aziendale</div>
       <div class="service-desc">Chiarezza, strategia e direzione per il prossimo passo.<br><span class="service-short-text">Percorsi personalizzati di Life e Business Coaching per obiettivi, decisioni, organizzazione e crescita professionale.</span><br><span class="service-tags">Coaching · Strategia · Crescita</span></div>
-    <br>Clicca sui pulsanti qui sotto per accedere a soluzioni personalizzate altamente competitive.
+    <br><a class="service-cta" href="https://wa.me/393664424024?text=Ciao%20Valentina%2C%20vorrei%20informazioni%20sul%20servizio%3A%20Life%2FBusiness%20Coaching%20e%20Consulenza%20aziendale." target="_blank" rel="noopener noreferrer">Richiedi informazioni su WhatsApp</a>
 </div>
   </div>
 </section>
